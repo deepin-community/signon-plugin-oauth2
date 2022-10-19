@@ -1,0 +1,64 @@
+signon-plugin-oauth2 (0.25-2) unstable; urgency=medium
+
+  * Team upload.
+  * Replace the patch disable-werror.diff with the upstream commit
+    2bf858a8c92aadaf75ce8213ea037fe7db544ae8; patch
+    upstream_build-stop-using-Werror.patch.
+  * Tighten the signon-plugin-oauth2 dependency in signon-plugin-oauth2-dev.
+  * Improve packages descriptions.
+  * Mark signon-plugin-oauth2 to enhance signond.
+
+ -- Pino Toscano <pino@debian.org>  Wed, 06 Jan 2021 09:03:13 +0100
+
+signon-plugin-oauth2 (0.25-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Diane Trout ]
+  * New upstream release.
+  * Update watch file for new gitlab url format
+
+  [ Rohan Garg ]
+  * Drop unused-variable.patch, applied upstream
+
+  [ Pino Toscano ]
+  * New upstream release.
+  * Update watch file.
+  * Remove commented bits of -dbg packages, now obsolete by dbgsym packages.
+  * Remove the unwanted files after dh_auto_install, instead of right before
+    dh_install.
+  * Switch Vcs-* fields to salsa.debian.org.
+  * Add the configuration for the CI on salsa.
+  * Update the patches:
+    - dont-install-examples.patch: drop, as the examples are no more built by
+      default
+    - hardening.patch: refresh
+  * Do not build with -Werror; patch disable-werror.diff. (Closes: #964690)
+  * Bump the debhelper compatibility to 13:
+    - switch the debhelper build dependency to debhelper-compat 13
+    - remove debian/compat
+    - stop passing --list-missing to dh_install, as the default now is
+      --fail-missing
+  * Add Rules-Requires-Root: no.
+  * Bump Standards-Version to 4.5.1, no changes required.
+  * Drop patch hardening.patch, hopefully all the required flags are respected
+    now.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Remove the dh_auto_test override, as now the tests are executed now.
+  * Remove the unused libqt5xmlpatterns5-dev build dependency.
+  * Do not pass PREFIX=/usr to qmake, as it is already passed by debhelper.
+  * Switch from /usr/share/dpkg/default.mk to /usr/share/dpkg/architecture.mk,
+    as we need bits only from the latter.
+  * Remove the dh_auto_clean override, as it seems not needed now.
+
+  [ Helmut Grohne ]
+  * Let dh_auto_configure pass cross tools to qmake. (see #881761)
+
+ -- Pino Toscano <pino@debian.org>  Fri, 01 Jan 2021 00:35:11 +0100
+
+signon-plugin-oauth2 (0.22-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Diane Trout <diane@debian.org>  Fri, 06 Nov 2015 22:34:08 -0800
